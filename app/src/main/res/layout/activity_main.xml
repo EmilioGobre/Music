@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,30 +9,207 @@
     android:orientation="vertical">
 <LinearLayout
     android:id="@+id/main_top"
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_margin="50dp"
-    android:layout_gravity="top"
-    android:background="#AA0000">
+    android:orientation="vertical"
+    android:layout_marginTop="15dp"
+    android:layout_marginEnd="30dp"
+    android:layout_marginStart="30dp"
+    android:layout_gravity="center">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text=""
+        android:text="@string/my_music"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
         />
 </LinearLayout>
-<RelativeLayout
-    android:id="@+id/main_body"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="30dp"
-    android:layout_gravity="bottom"
-    android:orientation="vertical"
-    android:background="@color/white"
 
-    >
+    <LinearLayout
+        android:id="@+id/main_body_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/main_top"
+        android:layout_above="@+id/main_bottom"
+        android:layout_marginTop="-2dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/main_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="13dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="78dp"
+                android:layout_height="123dp"
+                android:layout_marginStart="21dp"
+                android:background="@drawable/btncolor"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="14dp"
+                    android:contentDescription="@string/carpeta_de_musica"
+                    android:src="@drawable/music_album"
+                    app:tint="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/local"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="78dp"
+                android:layout_height="123dp"
+                android:layout_marginStart="18dp"
+                android:background="@drawable/btncolor"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="14dp"
+                    android:contentDescription="Un Reloj"
+                    android:src="@drawable/time"
+                    app:tint="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Recent"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginBottom="50dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My playlist"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/add_btn"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:background="@drawable/btncolor">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:contentDescription="@string/carpeta_de_musica"
+                        android:src="@drawable/add"
+                        app:tint="#FFFFFF" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="12dp"
+                    android:gravity="center"
+                    android:text="Create Playlist"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#1F0B5F"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="58dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:text="Nombre de la cancion"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="Nombre del album"
+                android:textColor="#999999"
+                android:textStyle="bold"
+                android:textSize="13sp"/>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btncircle">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:src="@drawable/play"
+                app:tint="#FFFFFF" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btncircle">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:src="@drawable/playlist_play"
+                app:tint="#FFFFFF"/>
+        </RelativeLayout>
+        </LinearLayout>
+
 </RelativeLayout>
-
-
-</androidx.appcompat.widget.LinearLayoutCompat>

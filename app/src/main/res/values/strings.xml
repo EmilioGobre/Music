@@ -2,4 +2,7 @@
     <string name="app_name">Music</string>
     <string name="by_gobre">By Gobre</string>
     <string name="imagen_del_logo">Imagen del Logo</string>
+    <string name="my_music">My music</string>
+    <string name="carpeta_de_musica">Carpeta de Musica</string>
+    <string name="local">Local</string>
 </resources>
