@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Player"
+    android:background="@color/black">
+    
+    <LinearLayout
+        android:id="@+id/player_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="5dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="SongName"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/player_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/player_top"
+        android:layout_above="@+id/player_ProgressBar_container">
+        <RelativeLayout
+            android:id="@+id/player_image_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+        <ImageView
+            android:id="@+id/player_image"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:foregroundGravity="center"
+            android:src="@drawable/gitlab"/>
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/player_ProgressBar_container"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_above="@+id/player_below"
+        android:gravity="center">
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="27dp"
+            android:layout_marginEnd="27dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/player_below"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/player_buttons_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/player_button_back_container"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/btncircle"
+                android:layout_marginEnd="15dp">
+
+                <ImageView
+                    android:id="@+id/player_button_back_circle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/btncircle" />
+
+                <ImageView
+                    android:id="@+id/player_button_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/back"
+                    app:tint="#FFFFFF" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/player_button_play_container"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:src="@drawable/btncircle">
+
+                <ImageView
+                    android:id="@+id/player_button_play_circle"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/btncircle" />
+
+                <ImageView
+                    android:id="@+id/player_button_play"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/play"
+                    app:tint="#FFFFFF" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/player_button_next_container"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/btncircle"
+                android:layout_marginStart="15dp">
+
+                <ImageView
+                    android:id="@+id/player_button_next_circle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/btncircle" />
+
+                <ImageView
+                    android:id="@+id/player_button_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/next"
+                    app:tint="#FFFFFF" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

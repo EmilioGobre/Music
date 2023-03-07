@@ -17,12 +17,19 @@
         android:textSize="17sp"
         android:textStyle="bold"
         android:textColor="#FFFFFF" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no_songs_tv"
+        android:text="NO SONGS FOUND"
+        android:layout_gravity="center"
+        android:textStyle="italic"
+        android:visibility="gone"/>
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvListaPeliculas"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="13dp" />
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rvListaMusica"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="13dp"/>
 
 </LinearLayout>

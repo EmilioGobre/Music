@@ -6,22 +6,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
+        android:id="@+id/box_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:background="@drawable/btncolor">
-
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/music_album"
+                android:layout_margin="5dp"
+                app:tint="#FFFFFF" />
             <TextView
                 android:id="@+id/tvSong_box"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textSize="15sp"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:text="@string/cancion"
-                android:textAlignment="center"
                 android:gravity="center"
-                android:layout_gravity="center"/>
+                android:padding="5dp"/>
     </LinearLayout>
 
 
