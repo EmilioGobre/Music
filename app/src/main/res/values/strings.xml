@@ -5,4 +5,5 @@
     <string name="my_music">My music</string>
     <string name="carpeta_de_musica">Carpeta de Musica</string>
     <string name="local">Local</string>
+    <string name="cancion">Song</string>
 </resources>
