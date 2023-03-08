@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,11 +8,12 @@
     android:background="@color/black"
     android:orientation="vertical">
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tvTitulo_main"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
         android:layout_marginBottom="24dp"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:text="@string/my_music"
         android:textSize="17sp"
         android:textStyle="bold"
@@ -20,16 +21,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/no_songs_tv"
+        android:id="@+id/tvNoSongs_main"
         android:text="NO SONGS FOUND"
         android:layout_gravity="center"
         android:textStyle="italic"
         android:visibility="gone"/>
 
-<androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/rvListaMusica"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="13dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListaMusica"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="13dp"
+        android:layout_below="@+id/tvTitulo_main"/>
 
-</LinearLayout>
+</RelativeLayout>

@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.rvListaMusica);
-        noMusicTextView = findViewById(R.id.no_songs_tv);
+        noMusicTextView = findViewById(R.id.tvNoSongs_main);
 
         if (checkPermission() == false){
             requestPermission();
@@ -45,14 +45,15 @@ public class MainActivity extends AppCompatActivity {
         Cursor cursor = getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,projection,selection,null,null);
         while(cursor.moveToNext()){
             MusicModel songData = new MusicModel(cursor.getString(1), cursor.getString(0), cursor.getString(2));
-            if(new File(songData.getPath()).exists())
-            songsList.add(songData);
+            if(new File(songData.getPath()).exists()) {
+                songsList.add(songData);
+            }
         }
         if (songsList.size() == 0){
             noMusicTextView.setVisibility(View.VISIBLE);
         }else{
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
-            recyclerView.setAdapter();
+            recyclerView.setAdapter(new MusicListAdapter(songsList, getApplicationContext()));
         }
     }
 
@@ -69,6 +70,14 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "We need permission for running propely this app", Toast.LENGTH_SHORT).show();
         }else {
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 123);
+        }
+
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (recyclerView!=null){
+            recyclerView.setAdapter(new MusicListAdapter(songsList, getApplicationContext()));
         }
     }
 }
